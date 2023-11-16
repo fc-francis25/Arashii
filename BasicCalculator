@@ -1,0 +1,43 @@
+def calculate(numb1, numb2, opt): #create a function that stores the following operations
+#inside the calculate function is the parameters.
+    if option == "A": # create a
+        opt = numb1 + numb2
+        print(f"The summation of two integers {numb1} and {numb2} is: {opt} ") #addition operation
+    elif option == "B":
+        opt = numb1 - numb2
+        print(f"The differences of two integers {numb1} and {numb2} is: {opt} ") #subtraction operation
+    elif option == "C":
+        opt = numb1 * numb2
+        print(f"The multiplied of two integers {numb1} and {numb2} is: {opt} ")#multiplication operation
+    elif option == "D":
+        opt = numb1 / numb2
+        print(f"The divided of two integers {numb1} and {numb2} is: {opt} ")#division operation
+    else:
+        opt = numb1 % numb2 #the percentage symbol is known as the modulo it is a operation for getting the remainder
+        print(f"The remainder of two integers {numb1} and {numb2} is: {opt} ")#remainder operation
+
+    return opt #return the variable named opt
+
+option = input("[A] - Addition," " [B] - Subtraction,"" [C] - Multiplication, " 
+               "[D] - Division, " "[R] - Remainder \n" "What operation? : ") #Choices for the user
+
+numb1 = int(input("Enter the first non-negative integer: "))  #first non-integer value
+numb2 = int(input("Enter the second non-negative integer: ")) #second non-integer value
+
+result = calculate(numb1, numb2, option) #the result variable will encapsulate all the calculation and choices of the user
+
+#determine if its even or an odd number
+#the format function will permit to substitute the result variable
+if (result % 2) == 0:
+    print("{0} is an even number".format(result))
+else:
+    print("{0} is an odd number".format(result))
+
+
+count = 0 #set the count to 0
+
+while result >= 2: #it will loop if the outcome is greater than or equal to 2
+    result -= 2
+    count += 1 #counts how many times the integer was divided into 2
+else:
+    print(f"Number of times repeatedly divided to (2): {count}")#print the outcome
