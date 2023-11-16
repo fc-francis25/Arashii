@@ -1,0 +1,82 @@
+while True:
+    def array_1():
+        arr = []  # empty array for listing all the input value given by the user
+        arr2 = []  # empty array that will determines the value if it's greater than 10
+        count = 0  # set count = 0 for increment or decrement function
+
+        numb = int(input("Enter the array length (Min-5) (Max-10): "))  # input the array size max 10 and min 5
+
+        if numb in range(5, 10):  # set the range 5 to 11 to determine the minimum and maximum amount of array size
+            for _ in range(0, numb):  # using for loop will loop anything that is iteretable
+                # using the _ in the for loop will not include in the item in the list that's why the user put an underscore (_)
+                value = int(input(f"Enter a value : "))
+
+                if value < 10:
+                    arr.append(value)  # append the arr variable, appending means adding the item to the end of the array.
+                elif value >= 10: # if the value is greater or equal to 10
+                    count = len(arr2) #count the value if there's number greater than 10
+                    count += 1 #increment command, to add one every count on a value
+                    arr2.append(value)  # append the arr2 variable if the user prompt a value that's greater than 10
+
+            else:
+                arr.sort()  # arrange the value in order that's starts in lower to greater value
+                arr2.sort()  # arrange the value in order that's starts in lower to greater value
+                print(f"The elements inside the array:", arr + arr2)  # print the given value by the user
+                print(f"The elements inside the array that's greater than 10 is/are {arr2} ")
+        else: # if the user wrong value it will invalidates the input and return to choices variable
+            print("invalid input")
+        print("-----------------------------")
+
+
+    def array_2(wd):  # di daw accepted ang reversed at ::
+        for x in range(0, int(len(wd) / 2)):  # loop from 0 to len/2
+            if wd[x] != wd[len(wd) - x - 1]:  # if the condition met, it will detect that it is not a palindrome.
+                return False
+            return True  # if the for loop is true then it will return as true and display that it is a palindrome.
+
+
+        word = input("Enter a word: ")  # variable that will input a word if palindrome or not
+        output = array_2(word)  # the Palindrome() function will detect the word variable if its a palindrome or not.
+
+        if (output):  # the if-else statement will know if its a palindrome or not.
+            print(f"{word}, is palindrome word ")  # print if its palindrome
+        else:
+            print(f"{word}, is not a palindrome word")  # print if not palindrome
+
+        print("-----------------------------")
+
+    def array_3(): #third choice
+        arr = [] #empty array
+        print("Press 1 to continue and 0 to display" #instructions for the user
+              " if 1, it will ask to enter value"
+              " and 0 it will display all the entered value by the user")
+        user = int(input("Enter 1 or 0: ")) #will define if the user wants to continue or display the value
+
+        while user == 1: #while the user prompt 1 it will loop until the user press 0
+            val = int(input("Enter a value: ")) #val variable will determine the entered value
+            arr.append(val) #the append command will add the entered value from the val variable
+            user = int(input("Enter 1 or 0: ")) #ask again the user if wants to continue or not
+
+        if user == 0: #if the user choose 0 it will print all the values inside the array
+            print("The value inside the Array is/are:", arr)
+
+        print("-----------------------------")
+
+    print("Developers name: Concepcion Francis\nDate it was created: September 12, 2023")
+    print("[0] - to end the program (optional) "
+          "\n[1] - Program 1 (Determine how many array larger number than 10 are inputted by the users.) "
+          "\n[2] - Program 2 (Determine if the string inputted by end user is a palindrome or not.) "
+          "\n[3] - Program 3 (Detect an input value and asked the user to input an integer [1] or [0])")
+
+    choices = input("Choose a number to run a specific program: ") #the choice variable will become the key to run a specific program
+    if choices == "0":
+        break #end the program if choices is equal to 0
+    elif choices == "1":
+        array_1() #call the function if choices is equal to 1
+    elif choices == "2":
+        array_2("") #call the function if choices is equal to 2
+    elif choices == "3":
+        array_3() #call the function if choices is equal to 3
+    else:
+        print("---------Invalid input---------")
+
